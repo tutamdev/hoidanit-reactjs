@@ -16,12 +16,29 @@ class MyComponent extends React.Component {
         });
         console.log(this.state.name);
     }
+
+    handleOnchageInput = (even) => {
+        this.setState({
+            name: even.target.value
+        })
+        // console.log(even);
+    }
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+    }
     //JSX
     render() {
         return (
             <div>My first component!
                 My name is {this.state.name} and I came from {this.state.address}
-                <button onClick={(even) => {this.handleClick(even)}}>Click me</button>
+                <form onSubmit={(event)=>this.handleOnSubmit(event)}>
+                    <input 
+                    type="text"
+                    onChange={(even) => this.handleOnchageInput(even) }
+                    />
+                    <button>Submit</button>
+                </form>
             </div>
         );
     }
