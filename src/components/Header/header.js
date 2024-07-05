@@ -2,18 +2,20 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-                <Navbar.Brand href="#home">Quiz App</Navbar.Brand>
+                {/* <Link className="" to="/">Quiz App</Link> */}
+                <Navbar.Brand href="/">Quiz App</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">User</Nav.Link>
-                        <Nav.Link href="#">Admin</Nav.Link>
+                        <NavLink className='nav-link' to="/" >Home</NavLink>
+                        <NavLink className='nav-link' to="/user" >User</NavLink>
+                        <NavLink className='nav-link' to="/admin" >Admin</NavLink>
 
                     </Nav>
                     <Nav>

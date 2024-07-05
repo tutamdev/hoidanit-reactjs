@@ -1,7 +1,9 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import React from 'react';
-import Header from './components/Header/header';
+import { Outlet, Link } from 'react-router-dom';
+import Header from './components/Header/Header';
+
 
 
 
@@ -9,7 +11,18 @@ import Header from './components/Header/header';
 const App = () => {
   return (
     <div className="app-container">
-      <Header />
+      <div className='header-container'>
+        <Header />
+      </div>
+      <div className='main-container'>
+        <div className='sidebar-container'>
+
+        </div>
+        <div className='app-container'>
+          <Outlet />
+        </div>
+      </div>
+
     </div>
   );
 }
