@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FcPlus } from 'react-icons/fc';
 import { toast } from 'react-toastify';
+import { postCreateNewUser } from '../../../services/api/apiServices';
 
-import axios from 'axios';
 const ModalCreateUser = (props) => {
     const { show, setShow } = props;
 
@@ -62,25 +62,18 @@ const ModalCreateUser = (props) => {
             toast.error('Email is invalid!');
             return;
         }
-        // call api
-        const data = new FormData();
-        data.append('username', username);
-        data.append('password', password);
-        data.append('email', email);
-        data.append('role', role);
-        data.append('userImage', image);
 
         // form.append('my_buffer', new Buffer(10));
         // form.append('my_file', fs.createReadStream('/foo/bar.jpg'));
 
-        let respond = await axios.post('http://localhost:8081/api/v1/participant', data);
-        console.log("check res: ", respond)
-        if (respond.data && respond.data.EC === 0) {
-            toast.success(respond.data.EM);
+        let data = await postCreateNewUser(username, password, email, role, image);
+        console.log("check res: ", data)
+        if (data && data.EC === 0) {
+            toast.success(data.EM);
             handleClose();
         }
-        if (respond.data && respond.data.EC !== 0) {
-            toast.error(respond.data.EM);   
+        if (data && data.EC !== 0) {
+            toast.error(data.EM);
         }
     }
 
