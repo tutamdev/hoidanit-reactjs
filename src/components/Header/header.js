@@ -1,3 +1,4 @@
+import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,10 +7,10 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary ">
             <Container>
-                {/* <Link className="" to="/">Quiz App</Link> */}
-                <Navbar.Brand href="/">Quiz App</Navbar.Brand>
+                <NavLink className="navbar-brand" to="/">Quiz App</NavLink>
+                {/* <Navbar.Brand href="/">Quiz App</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -19,11 +20,14 @@ const Header = () => {
 
                     </Nav>
                     <Nav>
+                        <button className='btn-login'>Log in</button>
+                        <button className='btn-signup'>Sign up</button>
+
                         <NavDropdown title="Settings" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Login</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Logout</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">User info</NavDropdown.Item>
-                            {/* <NavDropdown.Divider /> */}
+                            <NavDropdown.Item href="">Login</NavDropdown.Item>
+                            <NavDropdown.Item href="">User info</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="">Logout</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>

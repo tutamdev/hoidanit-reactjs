@@ -9,7 +9,9 @@ body {
 
 .app-container {
   .header-container {
-    .navbar-nav {
+    background-color: rgba($color: #ecdcc0, $alpha: 0.1);
+
+    .navbar {
       .nav-link {
         &.active {
           color: cornflowerblue;
@@ -17,5 +19,56 @@ body {
       }
     }
 
+    .btn-login,
+    .btn-signup {
+      border-radius: 8px;
+      padding: 0 15px;
+      margin: 0px 5px;
+      border: 1px solid #535353;
+      height: 40px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .btn-signup {
+      color: white;
+      background-color: #535353;
+
+    }
+  }
+}
+
+video {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  width: 100vw;
+  z-index: -999;
+}
+
+.homepage-container {
+  .homepage-content {
+    margin: 200px 0 0 90px;
+    height: 400px;
+    width: 500px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-size: 60px;
+    }
+    .content {
+      font-size: 24px;
+    }
+
+    button {
+      border-radius: 4px;
+      padding: 8px 16px;
+      background-color: #535353;
+      color: #fff;
+      border: 1px solid;
+    }
   }
 }
