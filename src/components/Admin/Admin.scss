@@ -6,4 +6,17 @@
             height: 100vh;
         }
     }
+
+    .admin-content {
+        width: 100%;
+
+        .admin-header {
+            border: 1px solid red;
+
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .admin-main {}
+    }
 }
